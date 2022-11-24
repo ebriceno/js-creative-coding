@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "canvas-sketch-cli": "^1.11.20"
+  }
+}
