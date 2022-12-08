@@ -1,0 +1,65 @@
+<html>
+    <body>
+        <canvas width="600" height="600"></canvas>
+        <script>
+            let canvas = document.querySelector("canvas");
+            let context = canvas.getContext("2d");
+
+            // Fill color
+            // context.fillStyle = "blue";
+
+            // Draw rectangle filled
+            // context.fillRect(100, 100, 400, 400);
+
+            // Draw rectangle borders
+            /* context.lineWidth = 4;
+            context.beginPath();
+            context.rect(100, 100, 400, 400);
+            context.stroke(); */
+
+            // Draw circle
+            /* context.beginPath();
+            context.arc(300, 300, 100, 0, Math.PI * 2);
+            context.stroke(); */
+
+            // For loop example
+            const width = 60;
+            const height = 60;
+            const gap = 20;
+        
+            for(let i = 0; i < 5; i++) {
+                for(let j = 0; j < 5; j++) {
+                    let x = 100 + (width + gap) * i;
+                    let y = 100 + (height + gap) * j;
+
+                    // Draw outer squares
+                    context.beginPath();
+                    context.rect(x, y, width, height);
+                    context.stroke();
+
+                    // Draw inner squares
+                    context.beginPath();
+                    context.rect(x + 8, y + 8, width - 16, height - 16);
+                    context.stroke();
+
+                    // Draw random inner inner squares conditionally
+                    if (Math.round(Math.random())) {
+                        // Fixed fill color
+                        // context.fillStyle = "red";
+
+                        // Random fill color
+                        context.fillStyle = `rgb(
+                            ${Math.floor(255 - 42.5 * i)},
+                            ${Math.floor(255 - 42.5 * j)},
+                            0)`;
+
+                        context.beginPath();
+                        context.rect(x + 16, y + 16, width - 32, height -32);
+                        context.fillRect(x + 16, y + 16, width - 32, height -32);
+                        context.stroke();
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
