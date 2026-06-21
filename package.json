@@ -2,7 +2,7 @@
   "name": "js-creative-coding",
   "private": true,
   "scripts": {
-    "sketch": "canvas-sketch",
+    "sketch": "canvas-sketch --open",
     "new:v1": "canvas-sketch --new --open",
     "new:v2": "canvas-sketch --new --open"
   },

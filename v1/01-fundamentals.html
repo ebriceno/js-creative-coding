@@ -1,0 +1,54 @@
+<html>
+  <body>
+    <canvas id="fundamentals" width="600" height="600" />
+
+  <script>
+    let canvas = document.getElementById("fundamentals");
+    let ctx = canvas.getContext("2d");
+
+    /*
+      ctx.fillStyle = "blue";
+      ctx.fillRect(100, 100, 300, 300);
+
+      ctx.fillStyle = "red";
+      ctx.beginPath();
+      ctx.arc(235, 250, 25, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = "yellow";
+      ctx.beginPath();
+      ctx.arc(265, 250, 25, 0, Math.PI * 2);
+    ctx.fill();
+    */
+
+    const height = 30;
+    const width = 30;
+
+    for(let i = 0; i < 8; i++) {
+      for(let j = 0; j < 8; j++) {
+        // Change next shape fill color
+        ctx.fillStyle = "darkgray";
+
+        // Draw an empty rectangle
+        ctx.strokeRect(100 + i * width, 100 + j * height, width - 10, height - 10);
+
+        if(Math.random() > 0.8) {
+          ctx.fillStyle = "darkgray";
+
+          // Draw a filled circle
+          ctx.beginPath();
+          ctx.arc(100 + i * width + 10, 100 + j * height + 10, 4, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        else if(Math.random() < 0.3) {
+          ctx.fillStyle = "lightgray";
+
+          // Draw a filled rectangle
+          ctx.fillRect(100 + i * width + 5, 100 + j * height + 5, 10, 10);
+        }
+      }
+    }
+
+  </script>
+  </body>
+</html>
